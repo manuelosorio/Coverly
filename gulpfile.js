@@ -29,7 +29,7 @@ let paths ={
     dest: "_dist/"
   },
   images: {
-    src: "src/assets/images/**/*.{jpg,png,svg}",
+    src: "src/assets/images/**/*.{jpg,jpeg,png,svg}",
     dest: "_dist/images"
   },
   scripts: {

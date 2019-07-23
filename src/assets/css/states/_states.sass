@@ -1,5 +1,9 @@
 .is-open
   transform: translatey(19rem)
+.has-items
+  background: $primary-accent
+  .cart--amount
+    transform: scale(1)
 .nav--hamburger
   &.is-active
     transform: rotate(90deg)
@@ -32,6 +36,14 @@
   .cart
     bottom: 2.5rem
     right: 2.5rem
+  .profile
+    &--info
+      transform: translateY(-10rem)
+    &--header
+      padding: 13rem 0
+    &--products
+      transform: translateY(0)
+      // transform: translateY(0)
 @media screen and (min-width: $large)
   .nav
     &--list
