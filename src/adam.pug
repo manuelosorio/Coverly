@@ -9,7 +9,7 @@ html
     meta(name="description" content="Coverly is a platform where cases can be sold or bought")
     meta(name="theme-color" content="#34BDB4")
     meta(name="msapplication-navbutton-color" content="#34BDB4")
-    meta(meta name="apple-mobile-web-app-capable" content="yes")
+    meta(name="apple-mobile-web-app-capable" content="yes")
     meta(name="apple-mobile-web-app-status-bar-style" content="black-translucent")
   body
     include includes/partials/nav.pug
@@ -20,7 +20,7 @@ html
         .profile--image
           img(src="images/adam.jpg" alt="Adam Bradley, Men standing infront of grafitti wall") 
         h3.profile--name Adam Bradley
-        p.profile--description Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisi lacus sed viverra tellus. Bibendum ut tristique et egestas quis ipsum suspendisse ultrices. Aliquet bibendum enim facilisis gravida neque. 
+        p.profile--description Creative independent artist who enjoy video games and music
         ul.profile--links
           li.profile--link
             a(href="#")
@@ -37,40 +37,44 @@ html
       main.column.medium-8.profile--products
         h2 Products
         .nested-container
-          a(href="./project-ust.html").column.small-12.medium-6.large-6.product
-            img(src="images/project-ust.jpg" alt="Project ust phone case")
-            .row.space-between.product--info
-              p.product--name Project Ust
-              p.product--price
-                span.strikethrough $20 
-                | $16
+          .column.small-12.medium-6.large-6.product
+            a(href="./project-ust.html")
+              img(src="images/project-ust.jpg" alt="Project ust phone case")
+              .row.space-between.product--info
+                p.product--name Project Ust
+                p.product--price
+                  span.strikethrough $20 
+                  | $16
             .row
-              button.button.column Check Out
-          a(href="#").column.small-12.medium-6.large-6.product
-            img(src="images/triforce.jpg" alt="Triforce phone case")
-            .row.space-between.product--info
-              p.product--name Triforce
-              p.product--price
-                span.strikethrough $20 
-                | $16
+              div(data-product-id="0").button.button--cart_add.column Add To Cart
+          .column.small-12.medium-6.large-6.product
+            a(href="#")
+              img(src="images/triforce.jpg" alt="Triforce phone case")
+              .row.space-between.product--info
+                p.product--name Triforce
+                p.product--price
+                  span.strikethrough $20 
+                  | $16
             .row
-              button.button.column Check Out
-          a(href="#").column.small-12.medium-6.large-6.product
-            img(src="images/genetic-games.jpg" alt="Genetic Games Logo Phone Case")
-            .row.space-between.product--info
-              p.product--name Genetic Games
-              p.product--price
-                span $20 
+              div(data-product-id="1").button.button--cart_add.column Add To Cart
+          .column.small-12.medium-6.large-6.product
+            a(href="#")
+              img(src="images/genetic-games.jpg" alt="Genetic Games Logo Phone Case")
+              .row.space-between.product--info
+                p.product--name Genetic Games
+                p.product--price
+                  span $20 
             .row
-              button.button.column Check Out
-          a(href="#").column.small-12.medium-6.large-6.product
-            img(src="images/stripes.jpg" alt="Stripes phone case")
-            .row.space-between.product--info
-              p.product--name Stripes
-              p.product--price
-                span.strikethrough $20 
-                | $16
+              div(data-product-id="2").button.button--cart_add.column Add To Cart
+          .column.small-12.medium-6.large-6.product
+            a(href="#")
+              img(src="images/stripes.jpg" alt="Stripes phone case")
+              .row.space-between.product--info
+                p.product--name Stripes
+                p.product--price
+                  span.strikethrough $20 
+                  | $16
             .row
-              button.button.column Check Out
+              div(data-product-id="3").button.button--cart_add.column Add To Cart
     include includes/partials/footer.pug
     script(src="scripts/script.js")

@@ -27,4 +27,51 @@ window.addEventListener("load", () => {
       userProfile.innerHTML = ''
     }
   }
+  let cartStorage = JSON.parse( localStorage.getItem("cart")) || [],
+      addCartButton = document.querySelectorAll('.button--cart_add'),
+      i,
+      getCartStorage = JSON.parse(localStorage.getItem("cart")),
+      cart = document.querySelector('.cart')
+      cartAmount =  document.querySelector('.cart--amount')
+
+  for (i = 0; i < addCartButton.length; i++){
+    addCartButton[i].addEventListener("click", (e) => {
+      console.log(e.target.dataset.productId)
+      cartStorage.push(e.target.dataset.productId)
+      localStorage.setItem('cart', JSON.stringify(cartStorage))
+      updateCart()
+    })
+  }
+  initCart()
+  function updateCart () {
+    try {
+      if (!cart.classList.contains('.has-items'))
+        cart.classList.add('has-items')
+      if (JSON.parse(localStorage.getItem("cart")).length > 9)
+        cartAmount.innerHTML = '9+'
+      else
+        cartAmount.innerHTML = JSON.parse(localStorage.getItem("cart")).length
+    } catch (error) {
+    }
+  }
+  function initCart() {
+    try {
+      if (getCartStorage.length > 9) {
+        cartAmount.innerHTML = '9+'
+        console.log("There are are over 9 products products in your cart")
+        if (!cart.classList.contains('.has-items')) {
+          cart.classList.add('has-items')
+        }
+      } else if (getCartStorage.length > 0) {
+        console.log("There are " + getCartStorage.length + " products in your cart")
+        cartAmount.innerHTML = getCartStorage.length
+        if (!cart.classList.contains('.has-items')) {
+          cart.classList.add('has-items')
+        }
+      }
+    } catch(error) {
+      if (error)
+      console.log(error)
+    }
+  }
 })
