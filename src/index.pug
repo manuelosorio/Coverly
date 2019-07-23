@@ -1,0 +1,65 @@
+doctype html
+html
+  head
+    title Coverly - Home
+    meta(charset="utf-8")
+    link(rel="stylesheet" href="css/style.css")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(name="description" content="Coverly is a platform where cases can be sold or bought")
+    meta(name="theme-color" content="#34BDB4")
+    meta(name="msapplication-navbutton-color" content="#34BDB4")
+    meta(meta name="apple-mobile-web-app-capable" content="yes")
+    meta(name="apple-mobile-web-app-status-bar-style" content="black-translucent")
+  body
+    include includes/partials/nav.pug
+    include includes/partials/hero.pug
+    include includes/partials/shopping-cart.pug
+    main
+      section
+        h2 Featured Cases
+        .container
+          a(href="./project-ust.html").column.small-12.medium-6.large-3.product
+            img(src="images/project-ust.jpg" alt="Project ust phone case")
+            .row.space-between.product--info
+              p.product--name Project Ust
+              p.product--price
+                span.strikethrough $20 
+                | $16
+          a(href="#").column.small-12.medium-6.large-3.product
+            img(src="images/coverly.jpg" alt="Coverly Logo phone case")
+            .row.space-between.product--info
+              p.product--name Coverly
+              p.product--price
+                span.strikethrough $20 
+                | $16
+          a(href="#").column.small-12.medium-6.large-3.product
+            img(src="images/triforce.jpg" alt="Triforce phone case")
+            .row.space-between.product--info
+              p.product--name Triforce
+              p.product--price
+                span.strikethrough $20 
+                | $16
+          a(href="#").column.small-12.medium-6.large-3.product
+            img(src="images/stripes.jpg" alt="Stripes phone case")
+            .row.space-between.product--info
+              p.product--name Stripes
+              p.product--price
+                span.strikethrough $20 
+                | $16
+      section
+        h2 Feature Artist
+        .container
+          a(href="./adam.html").artist.column.small-12.medium-4
+            img(src="images/adam.jpg" alt="Men standing infront of grafitti wall")
+            .row.center.artist--info
+              p.artist--name Adam Bradley
+          a(href="#").artist.column.small-12.medium-4
+            img(src="images/penny.jpg" alt="Women with hat staring hair flowing infront of face")
+            .row.center.artist--info
+              p.artist--name Penny Parkes
+          a(href="#").artist.column.small-12.medium-4
+            img(src="images/conner.jpg" alt="Men with astronaut like helment")
+            .row.center.artist--info
+              p.artist--name Conner Osborne
+    include includes/partials/footer.pug
+    script(src="scripts/script.js")
