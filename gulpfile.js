@@ -141,6 +141,6 @@ gulp.task('deploy', function () {
 return gulp.src("./_dist/**/*")
   .pipe(deploy({ 
     remoteUrl: "https://github.com/manuelosorio/Coverly.git",
-    branch: "prod"
+    branch: "production"
   }))
 })
