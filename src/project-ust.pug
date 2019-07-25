@@ -14,5 +14,53 @@ html
     include includes/partials/nav.pug
     include includes/partials/shopping-cart.pug
     main
+      section.single-product
+        .container
+          .column.medium-6
+            img(src="./images/project-ust.jpg" alt="")
+          .column.medium-6.single-product--info
+            h2.single-product--title Project Ust
+            p.single-product--designer Designed by 
+              a(href="./adam.html") Adam Bradley
+            .single-product--rating
+              i.mo.mo-star-fill
+              i.mo.mo-star-fill
+              i.mo.mo-star-fill
+              i.mo.mo-star-fill
+              i.mo.mo-star-half-fill
+            p.single-product--description From game Project U.S.T, Dom is jumping over UST-001 trying to avoid hitting it. U.S.T 001 is roaming around the area.
+            form.single-product--checkout
+              .row.wrap
+                input(type="radio" name="device" id="iPhoneX").single-product--radio.hide
+                label(for="iPhoneX").single-product--option.column.small-5.medium-3 iPhone X
+                input(type="radio" name="device" id="iPhone8").single-product--radio.hide
+                label(for="iPhone8").single-product--option.column.small-5.medium-3 iPhone 8
+                input(type="radio" name="device" id="iPhone8Plus").single-product--radio.hide
+                label(for="iPhone8Plus").single-product--option.column.small-5.medium-3.single-product--label iPhone 8 Plus
+                input(type="radio" name="device" id="iPhoneSE").single-product--radio.hide
+                label(for="iPhoneSE").single-product--option.column.small-5.medium-3 iPhone SE
+                input(type="radio" name="device" id="galaxyNote9").single-product--radio.hide
+                label(for="galaxyNote9").single-product--option.column.small-5.medium-3 Galaxy Note 9
+                input(type="radio" name="device" id="galaxyNote8").single-product--radio.hide
+                label(for="galaxyNote8").single-product--option.column.small-5.medium-3 Galaxy Note 8
+              .row.wrap
+                .single-product--amount.column.medium-4
+                  .single-product--subtract
+                    i.mo.mo-minus
+                  input(type="text" value="" placeholder="0").single-product--input
+                  .single-product--add
+                    i.mo.mo-plus
+                div(data-product-id="0").single-product--button.button.button--cart_add.column.medium-4 Add to Cart
+      section
+        h2 Other Cases
+        .container
+          .column.small-6.medium-3
+            img(src="./images/genetic-games.jpg" alt="")
+          .column.small-6.medium-3
+            img(src="./images/coverly.jpg" alt="")
+          .column.small-6.medium-3
+            img(src="./images/triforce.jpg" alt="")
+          .column.small-6.medium-3
+            img(src="./images/stripes.jpg" alt="")
     include includes/partials/footer.pug
     script(src="scripts/script.js")

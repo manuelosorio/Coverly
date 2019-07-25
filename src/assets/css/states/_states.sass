@@ -1,4 +1,6 @@
 /* Start States
+.hide
+  display: none
 .is-open
   transform: translatey(19rem)
 .has-items
@@ -10,12 +12,12 @@
     transform: rotate(90deg)
     div
       &:first-child
-        transform: translate(0, 10px) rotate(45deg)
+        transform: translate(0, 0.8rem) rotate(45deg)
       &:nth-child(2)
-        transform: translate(10px, 0)
+        transform: translate(0.8rem, 0)
         opacity: 0
       &:last-child
-        transform: translate(0, -10px) rotate(-45deg)
+        transform: translate(0, -0.8rem) rotate(-45deg)
 .user
   &--group.is-clicked
     width: 10rem
