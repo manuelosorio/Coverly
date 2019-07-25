@@ -1,5 +1,6 @@
 const gulp = require("gulp"),
     clean = require("gulp-clean"),
+    deploy = require('gulp-gh-pages'),
     sass = require("gulp-sass"),
     postcss = require("gulp-postcss"),
     pug = require("gulp-pug"),
@@ -136,3 +137,10 @@ let buildWatch = gulp.parallel([html, style, fonts, images, scripts, fonts], wat
 
 gulp.task('default', buildWatch)
 gulp.task('static', build)
+gulp.task('deploy', function () {
+return gulp.src("./_dist/**/*")
+  .pipe(deploy({ 
+    remoteUrl: "https://github.com/manuelosorio/Coverly.git",
+    branch: "prod"
+  }))
+})
