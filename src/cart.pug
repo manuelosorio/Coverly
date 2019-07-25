@@ -1,0 +1,79 @@
+doctype html
+html
+  head
+    title Coverly - Cart
+    meta(charset="utf-8")
+    link(rel="stylesheet" href="css/style.css")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(name="description" content="Coverly is a platform where cases can be sold or bought")
+    meta(name="theme-color" content="#34BDB4")
+    meta(name="msapplication-navbutton-color" content="#34BDB4")
+    meta(name="apple-mobile-web-app-capable" content="yes")
+    meta(name="apple-mobile-web-app-status-bar-style" content="black-translucent")
+  body
+    include includes/partials/nav.pug
+    main.shopping-cart
+      h2 Shopping Cart
+      .container#product
+          .column.medium-4
+            img(src="./images/project-ust.jpg" alt="")
+          .column.medium-8.single-product--info
+            h2.single-product--title Project Ust
+            p.single-product--designer Designed by 
+              a(href="./adam.html") Adam Bradley
+            .single-product--rating
+              i.mo.mo-star-fill
+              i.mo.mo-star-fill
+              i.mo.mo-star-fill
+              i.mo.mo-star-fill
+              i.mo.mo-star-half-fill
+            .single-product--checkout
+              .row.wrap
+                .single-product--amount.column.medium-4#amount
+                  .single-product--subtract#subtract
+                    i.mo.mo-minus
+                  input(type="number" value="1" placeholder="0").single-product--input#input
+                  .single-product--add#add
+                    i.mo.mo-plus
+              p.price $20
+      .container#product2
+          .column.medium-4
+            img(src="./images/triforce.jpg" alt="")
+          .column.medium-8.single-product--info
+            h2.single-product--title Triforce
+            p.single-product--designer Designed by 
+              a(href="./adam.html") Adam Bradley
+            .single-product--rating
+              i.mo.mo-star-fill
+              i.mo.mo-star-fill
+              i.mo.mo-star-fill
+              i.mo.mo-star-fill
+              i.mo.mo-star-half-fill
+            .single-product--checkout
+              .row.wrap
+                .single-product--amount.column.medium-4#amount2
+                  .single-product--subtract#subtract2
+                    i.mo.mo-minus
+                  input(type="number" value="1" placeholder="0").single-product--input#input2
+                  .single-product--add#add2
+                    i.mo.mo-plus
+              p.price $20
+      .container
+        .form--group.column.medium-5
+          select.form--input
+            option 
+            option(value="29.99") Economy &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8-12 Days &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $5.99
+            option(value="29.99") Standard &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3-5 Days
+            option(value="29.99") Overnight &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 Days &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$29.99
+          label.form--label Shipping Time
+        .form--group.column.medium-5
+          input(type="text").form--input
+          label.form--label Coupon Code
+      .container
+        .row
+          p.tax Tax: $2.80
+        .row
+          p.total Total: $42.80
+        a(href="./checkout.html").button Continue to Checkout
+    include includes/partials/footer.pug
+    script(src="scripts/script.js")

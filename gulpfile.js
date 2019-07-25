@@ -12,7 +12,7 @@ const gulp = require("gulp"),
     browserSync = require("browser-sync").create(),
     bourbon = require('node-bourbon').includePaths,
     concat = require('gulp-concat'),
-    uglify = require('gulp-uglify');
+    uglify = require('gulp-uglify-es').default;
 
 let paths ={
   styles: {

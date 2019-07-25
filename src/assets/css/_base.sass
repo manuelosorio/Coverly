@@ -28,6 +28,7 @@ li
   list-style: none
 a
   text-decoration: none
+  color: $secondary
 h1
   font-weight: 900
   font-size: 2.2rem
@@ -42,10 +43,14 @@ h3
 main
   margin: 1.5rem 0
   position: relative
-button
-  background: none
+button, input, select
+  padding: 0
+  margin: 0
   border: none
-input
-  border: none
+  font: inherit
+  color: inherit
   background: none
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button
+  -webkit-appearance: none
+  margin: 0
 /* End Base

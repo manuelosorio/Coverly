@@ -20,6 +20,7 @@ html
             img(src="./images/project-ust.jpg" alt="")
           .column.medium-6.single-product--info
             h2.single-product--title Project Ust
+              i.mo.mo-heart-outline.favorite
             p.single-product--designer Designed by 
               a(href="./adam.html") Adam Bradley
             .single-product--rating
@@ -44,11 +45,11 @@ html
                 input(type="radio" name="device" id="galaxyNote8").single-product--radio.hide
                 label(for="galaxyNote8").single-product--option.column.small-5.medium-3 Galaxy Note 8
               .row.wrap
-                .single-product--amount.column.medium-4
-                  .single-product--subtract
+                .single-product--amount.column.medium-4#amount
+                  .single-product--subtract#subtract
                     i.mo.mo-minus
-                  input(type="text" value="" placeholder="0").single-product--input
-                  .single-product--add
+                  input(type="text" value="0" placeholder="0").single-product--input#input
+                  .single-product--add#add
                     i.mo.mo-plus
                 div(data-product-id="0").single-product--button.button.button--cart_add.column.medium-4 Add to Cart
       section

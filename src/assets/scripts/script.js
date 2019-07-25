@@ -4,7 +4,58 @@ window.addEventListener("load", () => {
       userGroup = document.querySelector('.user--group')
       userProfile = document.querySelector('.user--profile'),
       userArrow = document.querySelector('.user--arrow'),
-      userAvatar= document.querySelector('.user--avatar')
+      userAvatar = document.querySelector('.user--avatar'),
+      favorite = document.querySelector('.favorite'),
+      singleProductAmount = document.querySelector('#amount'),
+      singleProductAmount2 = document.querySelector('#amount2'),
+      singleProductSubtract = document.querySelector('#subtract'),
+      singleProductAdd = document.querySelector('#add'),
+      singleProductSubtract2 = document.querySelector('#subtract2'),
+      singleProductAdd2 = document.querySelector('#add2'),
+      singleProductInput = document.querySelector('#input'),
+      singleProductInput2 = document.querySelector('#input2'),
+      singleProductButton = document.querySelector('.single-product--button')
+  try {
+    favorite.addEventListener("click", (e) => {
+      if (favorite.classList.contains('mo-heart-outline')){
+        favorite.classList.remove('mo-heart-outline')
+        favorite.classList.add('mo-heart-fill')
+      } else {
+        favorite.classList.remove('mo-heart-fill')
+        favorite.classList.add('mo-heart-outline')
+      }
+  })
+  } catch (err) {
+    console.log(err)
+  }  try {
+      singleProductSubtract.addEventListener('click', () => {
+        if (singleProductInput.value == "" || singleProductInput.value == "0" || singleProductInput.value < "0") {
+        } else if (singleProductInput.value > "0") {
+          singleProductInput.value--;
+        }
+      })
+      singleProductAdd.addEventListener('click', () => {
+        if (singleProductInput.value < "99")
+          singleProductInput.value++;
+      })
+    } catch (err) {
+      console.log(err)
+    }
+  try {
+    singleProductSubtract2.addEventListener('click', () => {
+      if (singleProductInput2.value == "" || singleProductInput2.value == "0" || singleProductInput2.value < "0") {
+      } else if (singleProductInput2.value > "0") {
+        singleProductInput2.value--;
+      }
+    })
+    singleProductAdd2.addEventListener('click', () => {
+      if (singleProductInput2.value < "99") {
+        singleProductInput2.value++;
+      }
+    })
+  } catch (err) {
+    console.log(err)
+  }
   hamburgerMenu.addEventListener("click", (e) => {
     hamburgerMenu.classList.toggle('is-active')
     navList.classList.toggle('is-open')
@@ -33,7 +84,12 @@ window.addEventListener("load", () => {
       getCartStorage = JSON.parse(localStorage.getItem("cart")),
       cart = document.querySelector('.cart')
       cartAmount =  document.querySelector('.cart--amount')
-
+  for (var j = 0; j < singleProductSubtract.length; ++j){
+    singleProductSubtract[j].addEventListener("click", (e) => {
+      console.log(singleProductInput[j])
+      console.log(j)
+    })
+  }
   for (i = 0; i < addCartButton.length; i++){
     addCartButton[i].addEventListener("click", (e) => {
       console.log(e.target.dataset.productId)
@@ -51,7 +107,7 @@ window.addEventListener("load", () => {
         cartAmount.innerHTML = '9+'
       else
         cartAmount.innerHTML = JSON.parse(localStorage.getItem("cart")).length
-    } catch (error) {
+    } catch (err) {
     }
   }
   function initCart() {
@@ -69,9 +125,35 @@ window.addEventListener("load", () => {
           cart.classList.add('has-items')
         }
       }
-    } catch(error) {
-      if (error)
-      console.log(error)
+    } catch(err) {
+      if (err)
+      console.log(err)
     }
+  }
+  try {
+    document.addEventListener("change", function() {
+      var input = document.querySelectorAll(".form--input");
+      for (var j = 0; j < input.length; j++) {
+        if (input[j].value === ""){
+          input[j].classList.remove('has-value');
+        } else {
+          input[j].classList.add('has-value');
+        }
+      }
+
+      var checkbox = document.querySelector('#checkbox');
+      var hideable = document.querySelectorAll(".hideable");
+      if (checkbox.checked == true) {
+        for (var k = 0; k < hideable.length; k++) {
+          hideable[k].classList.add('hide');
+        }
+      } else {
+        for (var l = 0; l < hideable.length; l++) {
+          hideable[l].classList.remove('hide');
+        }
+      }
+    })
+  } catch (err) {
+
   }
 })
