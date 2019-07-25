@@ -47,11 +47,11 @@ function style() {
     .pipe(sourcemaps.init())
     .pipe(sass({
       includePaths: ['styles'].concat(bourbon),
-      outputStyle: "expanded"
+      outputStyle: "compressed"
     }))
     .on("error", sass.logError)
     .pipe(postcss([autoprefixer()]))
-    .pipe(sourcemaps.write())
+    // .pipe(sourcemaps.write())
     .pipe(gulp.dest(paths.styles.dest))
     .pipe(browserSync.stream());
 }
@@ -96,7 +96,7 @@ function images () {
 function scripts() {
   return gulp.src(paths.scripts.src)
     // .pipe(concat('script.js'))
-    // .pipe(uglify())
+    .pipe(uglify())
     .pipe(gulp.dest(paths.scripts.dest))
 }
 function fonts() {

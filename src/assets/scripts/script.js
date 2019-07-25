@@ -84,12 +84,6 @@ window.addEventListener("load", () => {
       getCartStorage = JSON.parse(localStorage.getItem("cart")),
       cart = document.querySelector('.cart')
       cartAmount =  document.querySelector('.cart--amount')
-  for (var j = 0; j < singleProductSubtract.length; ++j){
-    singleProductSubtract[j].addEventListener("click", (e) => {
-      console.log(singleProductInput[j])
-      console.log(j)
-    })
-  }
   for (i = 0; i < addCartButton.length; i++){
     addCartButton[i].addEventListener("click", (e) => {
       console.log(e.target.dataset.productId)
